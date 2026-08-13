@@ -22,10 +22,11 @@ export default function MovieCard({ movie, idx, isWatchlisted, toggleWatchlist, 
     >
       <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-secondary mb-3 border border-border/50 shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10 group-hover:border-primary/30">
         <img 
-          src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/500x750?text=No+Poster'}
+          src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : `https://picsum.photos/seed/${movie.id}/500/750`}
           alt={movie.title || movie.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 bg-secondary"
           loading="lazy"
+          onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${movie.id}/500/750`; }}
         />
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-3">

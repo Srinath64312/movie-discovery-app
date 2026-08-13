@@ -124,9 +124,10 @@ export default function MoviePage({ watchlist, toggleWatchlist }: { watchlist: a
       {/* Cinematic Header */}
       <div className="relative h-[60vh] lg:h-[75vh] w-full bg-black">
         <img 
-          src={movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : 'https://via.placeholder.com/1920x1080'}
+          src={movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : `https://picsum.photos/seed/${movie.id}bg/1920/1080`}
           alt="Backdrop"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-40 bg-black"
+          onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${movie.id}bg/1920/1080`; }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
@@ -134,9 +135,10 @@ export default function MoviePage({ watchlist, toggleWatchlist }: { watchlist: a
         <div className="absolute inset-0 pt-16 flex items-end">
           <div className="max-w-7xl mx-auto w-full px-4 pb-12 flex flex-col md:flex-row gap-8 items-end">
             <img 
-              src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/500x750'}
+              src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : `https://picsum.photos/seed/${movie.id}/500/750`}
               alt={movie.title}
-              className="w-48 md:w-64 rounded-xl shadow-2xl border border-border/20 hidden sm:block"
+              className="w-48 md:w-64 rounded-xl shadow-2xl border border-border/20 hidden sm:block bg-secondary"
+              onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${movie.id}/500/750`; }}
             />
             <div className="flex-1">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">{movie.title}</h1>
@@ -188,9 +190,10 @@ export default function MoviePage({ watchlist, toggleWatchlist }: { watchlist: a
                 {cast.map(actor => (
                   <div key={actor.id} className="flex-shrink-0 w-32 bg-secondary/30 rounded-xl overflow-hidden border border-border">
                     <img 
-                      src={actor.profile_path ? `https://image.tmdb.org/t/p/w185${actor.profile_path}` : 'https://via.placeholder.com/185x278?text=No+Photo'} 
+                      src={actor.profile_path ? `https://image.tmdb.org/t/p/w185${actor.profile_path}` : `https://picsum.photos/seed/${actor.id}cast/185/278`} 
                       alt={actor.name}
-                      className="w-full h-40 object-cover"
+                      className="w-full h-40 object-cover bg-secondary"
+                      onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${actor.id}cast/185/278`; }}
                     />
                     <div className="p-3">
                       <p className="font-semibold text-sm line-clamp-1">{actor.name}</p>
@@ -319,9 +322,10 @@ export default function MoviePage({ watchlist, toggleWatchlist }: { watchlist: a
                 {similar.map(sim => (
                   <Link to={`/movie/${sim.id}`} key={sim.id} className="group relative rounded-lg overflow-hidden border border-border">
                     <img 
-                      src={sim.poster_path ? `https://image.tmdb.org/t/p/w342${sim.poster_path}` : 'https://via.placeholder.com/342x513'} 
+                      src={sim.poster_path ? `https://image.tmdb.org/t/p/w342${sim.poster_path}` : `https://picsum.photos/seed/${sim.id}/342/513`} 
                       alt={sim.title}
-                      className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500 bg-secondary"
+                      onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${sim.id}/342/513`; }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
                       <p className="text-white text-xs font-semibold line-clamp-2">{sim.title}</p>

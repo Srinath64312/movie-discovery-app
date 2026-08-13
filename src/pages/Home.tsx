@@ -54,9 +54,10 @@ export default function Home({ movies, loading, query, setQuery, watchlist, togg
         <div className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src={movies[0].backdrop_path ? `https://image.tmdb.org/t/p/original${movies[0].backdrop_path}` : 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2525&auto=format&fit=crop'} 
+              src={movies[0].backdrop_path ? `https://image.tmdb.org/t/p/original${movies[0].backdrop_path}` : `https://picsum.photos/seed/${movies[0].id}bg/1920/1080`} 
               alt="Hero Backdrop"
-              className="w-full h-full object-cover opacity-30 blur-[2px] scale-105"
+              className="w-full h-full object-cover opacity-30 blur-[2px] scale-105 bg-black"
+              onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${movies[0].id}bg/1920/1080`; }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           </div>
@@ -108,9 +109,10 @@ export default function Home({ movies, loading, query, setQuery, watchlist, togg
               <div className="relative group transition-transform duration-500 hover:rotate-y-12">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-1000" />
                 <img 
-                  src={movies[0].poster_path ? `https://image.tmdb.org/t/p/w500${movies[0].poster_path}` : 'https://via.placeholder.com/500x750'}
+                  src={movies[0].poster_path ? `https://image.tmdb.org/t/p/w500${movies[0].poster_path}` : `https://picsum.photos/seed/${movies[0].id}/500/750`}
                   alt="Poster" 
-                  className="relative rounded-2xl w-80 shadow-2xl object-cover ring-1 ring-white/10"
+                  className="relative rounded-2xl w-80 shadow-2xl object-cover ring-1 ring-white/10 bg-secondary"
+                  onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${movies[0].id}/500/750`; }}
                 />
               </div>
             </motion.div>
