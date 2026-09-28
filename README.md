@@ -1,32 +1,60 @@
-# React + TypeScript + Vite
+# 🎬 Movie Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, fluid movie discovery and exploration platform built with **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **🔍 Smart Search & Autocomplete**: Instant search across extensive movie databases.
+- **🎭 Genre & Category Filtering**: Browse trending movies, top-rated films, and genre-specific collections.
+- **✨ Smooth Micro-Interactions**: Fluid layout transitions, animated hover effects, and modal viewports powered by Framer Motion.
+- **📱 Fully Responsive**: Optimized for ultra-fast performance across mobile, tablet, and desktop screens.
+- **⚡ Next-Gen Build Stack**: Powered by Vite and Oxlint for ultra-fast HMR and clean code quality.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing & HTTP**: [React Router v7](https://reactrouter.com/) & [Axios](https://axios-http.com/)
+- **Bundler & Tooling**: [Vite](https://vitejs.dev/) + [Oxlint](https://oxc-project.github.io/)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn / pnpm
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Srinath64312/movie-discovery-app.git
+   cd movie-discovery-app
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the local development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
